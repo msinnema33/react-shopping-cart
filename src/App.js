@@ -14,12 +14,13 @@ function App() {
 	const [cart, setCart] = useState([]);
 
 	const addItem = item => {
+		setCart([...cart, item]) 
 		// add the given item to the cart
 	};
 
 	return (
 		<ProductContext.Provider value={{ products, addItem }}>
-			<CartContext.Provider value={{}}> 
+			<CartContext.Provider value={{cart}}> 
 			
 			{/* //need the prop for cart state */}
 		<div className="App">
