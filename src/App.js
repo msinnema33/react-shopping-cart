@@ -3,7 +3,6 @@ import { Route } from 'react-router-dom';
 import data from './data';
 import { ProductContext } from '../contexts/ProductContext';
 import { CartContext } from '../contexts/CartContext';
-
 // Components
 import Navigation from './components/Navigation';
 import Products from './components/Products';
@@ -17,37 +16,23 @@ function App() {
 		setCart([...cart, item]) 
 		// add the given item to the cart
 	};
-
 	return (
 		<ProductContext.Provider value={{ products, addItem }}>
 			<CartContext.Provider value={{cart}}> 
-			
-			{/* //need the prop for cart state */}
+						{/* //need the prop for cart state */}
 		<div className="App">
 			<Navigation cart={cart} />
-
 			{/* Routes */}
 			<Route exact path='/' component={Products}/>
-				{/* exact
-				path="/"
-				render={() => (
-					<Products
-						products={products}
-						addItem={addItem}
-					/>
-				)}
-			/> */}
-
+				{/* exact path="/" render={() => (<Products products={products} addItem={addItem}/> )}/> */}
 			<Route
 				path="/cart"
 				render={() => <ShoppingCart cart={cart} />}
 //do I need tochange this to match the exactpath like above
-
 			/>
 		</div>
 		</CartContext.Provider>
 		</ProductContext.Provider>
 	);
 }
-
 export default App;
