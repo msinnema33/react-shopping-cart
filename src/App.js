@@ -28,7 +28,6 @@ function App() {
 			<Route
 				path="/cart"
 				render={() => <ShoppingCart cart={cart} />}
-//do I need tochange this to match the exactpath like above
 			/>
 		</div>
 		</CartContext.Provider>
