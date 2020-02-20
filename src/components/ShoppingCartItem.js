@@ -16,3 +16,6 @@ const Item = props => {
 };
 
 export default Item;
+
+
+//might need to remove the props here as well.
